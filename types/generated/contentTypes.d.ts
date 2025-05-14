@@ -537,6 +537,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
+    description: '';
     displayName: 'Post';
     pluralName: 'posts';
     singularName: 'post';
@@ -549,12 +550,18 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    images: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::post.post'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      ['text-left-images-right', 'text-right-images-left']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'text-left-images-right'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

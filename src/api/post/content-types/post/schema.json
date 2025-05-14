@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,24 @@
     },
     "content": {
       "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text-left-images-right",
+        "text-right-images-left"
+      ],
+      "default": "text-left-images-right",
+      "required": true
     }
   }
 }
