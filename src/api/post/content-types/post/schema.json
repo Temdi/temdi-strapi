@@ -21,19 +21,22 @@
       "type": "text"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "type": {
       "type": "enumeration",
       "enum": [
         "text-left-images-right",
-        "text-right-images-left"
+        "text-right-images-left",
+        "text-top-images-bottom",
+        "text-bottom-images-top"
       ],
       "default": "text-left-images-right",
       "required": true

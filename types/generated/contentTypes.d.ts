@@ -558,7 +558,12 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
-      ['text-left-images-right', 'text-right-images-left']
+      [
+        'text-left-images-right',
+        'text-right-images-left',
+        'text-top-images-bottom',
+        'text-bottom-images-top',
+      ]
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'text-left-images-right'>;
