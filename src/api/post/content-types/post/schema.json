@@ -40,6 +40,10 @@
       ],
       "default": "text-left-images-right",
       "required": true
+    },
+    "day": {
+      "type": "date",
+      "required": true
     }
   }
 }
